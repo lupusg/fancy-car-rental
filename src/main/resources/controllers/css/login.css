@@ -1,0 +1,18 @@
+#left-part{
+  -fx-background-color: linear-gradient(to left, #6D4C41, #3E2723);
+  -fx-background-radius: 19 0 0 19;
+}
+
+.text-field{
+    -fx-background-radius: 50px;
+}
+
+#submit-button{
+  -fx-background-radius: 50px;
+  -fx-background-color: linear-gradient(to right, #795548, #4E342E);
+}
+
+.root{
+  -fx-background-radius: 26 19 19 26;
+}
+
