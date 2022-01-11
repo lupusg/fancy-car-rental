@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.stage.StageStyle;
 
-public class LoginSceneController extends Application {
+public class LoginScene extends Application {
 
   @Override
   public void start(Stage stage) throws IOException {
