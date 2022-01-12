@@ -1,7 +1,6 @@
 package controllers;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -25,7 +24,7 @@ public class Login {
   @FXML private Button loginButton;
 
   @FXML
-  protected void onLoginButtonClick() throws SQLException, IOException {
+  protected void onLoginButtonClick() throws IOException {
     DatabaseConnection databaseConnection = new DatabaseConnection();
     SwitchScene switchSceneController = new SwitchScene();
     User user = new User(usernameInput.getText(), passwordInput.getText());
@@ -62,7 +61,7 @@ public class Login {
   }
 
   @FXML
-  void onEnter(KeyEvent event) throws SQLException, IOException {
+  void onEnter(KeyEvent event) throws IOException {
     if(event.getCode() == KeyCode.ENTER){
       onLoginButtonClick();
     }
