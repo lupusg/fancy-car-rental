@@ -1,29 +1,31 @@
 package logic;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.and;
+
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import model.User;
+import org.bson.Document;
 
 public class DatabaseConnection {
-  private final Connection connection;
-  private final Statement statement;
+  private MongoClient mongoClient;
+  private MongoDatabase mongoDatabase;
+  private MongoCollection<Document> collection;
 
-  public DatabaseConnection() throws SQLException {
-    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/car_rental", "root", "");
-
-    statement = connection.createStatement();
+  public DatabaseConnection() {
+    mongoClient = new MongoClient("localhost");
+    mongoDatabase = mongoClient.getDatabase("car_rental");
+    collection = mongoDatabase.getCollection("users");
   }
 
-  public boolean checkLogin(String username, String password) throws SQLException {
-    final ResultSet result =
-        statement.executeQuery(
-            "SELECT username, password FROM users WHERE username = '"
-                + username
-                + "' AND password = '"
-                + password
-                + "'");
-    return result.first();
+  public boolean checkLogin(User user) {
+    Document document =
+        collection
+            .find(and(eq("_id", user.getUsername()), eq("password", user.getPassword())))
+            .first();
+
+    return document != null;
   }
 }
