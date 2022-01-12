@@ -2,15 +2,17 @@ package controllers;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import logic.DatabaseConnection;
+import model.User;
 
 public class Login {
 
@@ -26,8 +28,9 @@ public class Login {
   protected void onLoginButtonClick() throws SQLException, IOException {
     DatabaseConnection databaseConnection = new DatabaseConnection();
     SwitchScene switchSceneController = new SwitchScene();
+    User user = new User(usernameInput.getText(), passwordInput.getText());
 
-    if (databaseConnection.checkLogin(usernameInput.getText(), passwordInput.getText())) {
+    if (databaseConnection.checkLogin(user)) {
       switchSceneController.switchScene("main/main.fxml", loginButton, 1300, 750);
     } else System.out.println("invalid username/pass");
   }
@@ -56,5 +59,12 @@ public class Login {
   void pressed(MouseEvent event) {
     x = event.getSceneX();
     y = event.getSceneY();
+  }
+
+  @FXML
+  void onEnter(KeyEvent event) throws SQLException, IOException {
+    if(event.getCode() == KeyCode.ENTER){
+      onLoginButtonClick();
+    }
   }
 }

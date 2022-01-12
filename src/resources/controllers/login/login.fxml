@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <HBox prefHeight="500.0" prefWidth="800.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Login">
    <children>
       <AnchorPane>
@@ -27,7 +26,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="367.0" prefHeight="500.0" prefWidth="431.0">
+            <AnchorPane layoutX="367.0" prefHeight="500.0" prefWidth="398.0">
                <children>
                   <VBox alignment="CENTER_LEFT" layoutX="98.0" layoutY="65.0" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="371.0" prefWidth="236.0" spacing="40.0">
                      <children>
@@ -40,14 +39,14 @@
                               </Label>
                            </children>
                         </VBox>
-                        <TextField id="email-input" fx:id="usernameInput" prefHeight="37.0" prefWidth="236.0" promptText=" Username" />
-                        <PasswordField id="pass-input" fx:id="passwordInput" prefHeight="37.0" promptText=" Password" />
+                        <TextField id="email-input" fx:id="usernameInput" onKeyPressed="#onEnter" prefHeight="37.0" prefWidth="236.0" promptText=" Username" />
+                        <PasswordField id="pass-input" fx:id="passwordInput" onKeyPressed="#onEnter" prefHeight="37.0" promptText=" Password" />
                         <VBox alignment="CENTER_RIGHT">
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
                                     <Label text="Forgot your password?" />
-                                    <Button id="submit-button" fx:id="loginButton" alignment="CENTER" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="31.0" prefWidth="97.0" text="Sign In" textFill="WHITE">
+                                    <Button id="submit-button" fx:id="loginButton" alignment="CENTER" mnemonicParsing="false" onAction="#onLoginButtonClick" onKeyPressed="#onEnter" prefHeight="31.0" prefWidth="97.0" text="Sign In" textFill="WHITE">
                                        <HBox.margin>
                                           <Insets left="18.0" />
                                        </HBox.margin>
