@@ -14,8 +14,8 @@ import logic.DatabaseConnection;
 import model.User;
 
 public class Login {
-
   private double x, y;
+  public static String username;
 
   @FXML private TextField usernameInput;
 
@@ -30,7 +30,8 @@ public class Login {
     User user = new User(usernameInput.getText(), passwordInput.getText());
 
     if (databaseConnection.checkLogin(user)) {
-      switchSceneController.switchScene("main/main.fxml", loginButton, 1300, 750);
+      username = user.getUsername();
+      switchSceneController.switchScene("main/cars.fxml", loginButton, 1300, 750);
     } else System.out.println("invalid username/pass");
   }
 
