@@ -14,10 +14,22 @@ public class DatabaseConnection {
   private MongoDatabase mongoDatabase;
   private MongoCollection<Document> collection;
 
-  public DatabaseConnection() {
+  public DatabaseConnection(String database, String collection) {
     mongoClient = new MongoClient("localhost");
-    mongoDatabase = mongoClient.getDatabase("car_rental");
-    collection = mongoDatabase.getCollection("users");
+    mongoDatabase = mongoClient.getDatabase(database);
+    this.collection = mongoDatabase.getCollection(collection);
+  }
+
+  public MongoClient getMongoClient() {
+    return mongoClient;
+  }
+
+  public MongoDatabase getMongoDatabase() {
+    return mongoDatabase;
+  }
+
+  public MongoCollection<Document> getCollection() {
+    return collection;
   }
 
   public boolean checkLogin(User user) {
