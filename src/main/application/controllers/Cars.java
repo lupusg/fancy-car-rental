@@ -25,7 +25,7 @@ import model.Car;
 import org.bson.Document;
 import org.json.JSONObject;
 
-public class Main implements Initializable {
+public class Cars implements Initializable {
   private double x, y;
 
   @FXML private GridPane grid;
@@ -33,6 +33,8 @@ public class Main implements Initializable {
   @FXML private ScrollPane scroll;
 
   @FXML private Button carsBtn;
+
+  private List<Car> cars = new ArrayList<>();
 
   @FXML
   void dragged(MouseEvent event) {
@@ -61,11 +63,12 @@ public class Main implements Initializable {
   }
 
   @FXML
-  void toMyCars(){
-
+  void toMyCars() throws IOException {
+    SwitchScene switchScene = new SwitchScene();
+    switchScene.switchScene("main/my_cars.fxml", carsBtn, 1300, 750);
   }
 
-  private List<Car> cars = new ArrayList<>();
+
 
   private List<Car> getData() {
     List<Car> cars = new ArrayList<>();
@@ -108,7 +111,7 @@ public class Main implements Initializable {
         }
 
         grid.add(anchorPane, column++, row);
-        GridPane.setMargin(anchorPane, new Insets(10, 40, 0 , 7));
+        GridPane.setMargin(anchorPane, new Insets(10, 40, 0, 7));
       }
     } catch (IOException e) {
       e.printStackTrace();
