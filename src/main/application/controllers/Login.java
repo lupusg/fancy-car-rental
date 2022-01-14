@@ -25,7 +25,7 @@ public class Login {
 
   @FXML
   protected void onLoginButtonClick() throws IOException {
-    DatabaseConnection databaseConnection = new DatabaseConnection();
+    DatabaseConnection databaseConnection = new DatabaseConnection("car_rental", "users");
     SwitchScene switchSceneController = new SwitchScene();
     User user = new User(usernameInput.getText(), passwordInput.getText());
 
