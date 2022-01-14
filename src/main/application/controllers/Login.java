@@ -25,13 +25,11 @@ public class Login {
 
   @FXML
   protected void onLoginButtonClick() throws IOException {
-    DatabaseConnection databaseConnection = new DatabaseConnection("car_rental", "users");
-    SwitchScene switchSceneController = new SwitchScene();
     User user = new User(usernameInput.getText(), passwordInput.getText());
 
-    if (databaseConnection.checkLogin(user)) {
+    if (DatabaseConnection.checkLogin(user)) {
       username = user.getUsername();
-      switchSceneController.switchScene("main/cars.fxml", loginButton, 1300, 750);
+      SwitchScene.switchScene("main/cars.fxml", loginButton, 1300, 750);
     } else System.out.println("invalid username/pass");
   }
 

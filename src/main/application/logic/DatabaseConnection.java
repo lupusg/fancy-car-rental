@@ -6,35 +6,28 @@ import static com.mongodb.client.model.Filters.and;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import javafx.scene.chart.PieChart.Data;
 import model.User;
 import org.bson.Document;
 
 public class DatabaseConnection {
-  private MongoClient mongoClient;
-  private MongoDatabase mongoDatabase;
-  private MongoCollection<Document> collection;
+  public static MongoClient mongoClient;
+  public static MongoDatabase mongoDatabase;
+  public static MongoCollection<Document> usersCollection;
+  public static MongoCollection<Document> carsCollection;
 
-  public DatabaseConnection(String database, String collection) {
+  public DatabaseConnection() {
     mongoClient = new MongoClient("localhost");
-    mongoDatabase = mongoClient.getDatabase(database);
-    this.collection = mongoDatabase.getCollection(collection);
+
+    mongoDatabase = mongoClient.getDatabase("car_rental");
+
+    usersCollection = mongoDatabase.getCollection("users");
+    carsCollection = mongoDatabase.getCollection("cars");
   }
 
-  public MongoClient getMongoClient() {
-    return mongoClient;
-  }
-
-  public MongoDatabase getMongoDatabase() {
-    return mongoDatabase;
-  }
-
-  public MongoCollection<Document> getCollection() {
-    return collection;
-  }
-
-  public boolean checkLogin(User user) {
+  public static boolean checkLogin(User user) {
     Document document =
-        collection
+        usersCollection
             .find(and(eq("_id", user.getUsername()), eq("password", user.getPassword())))
             .first();
 

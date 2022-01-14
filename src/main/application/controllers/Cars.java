@@ -64,17 +64,14 @@ public class Cars implements Initializable {
 
   @FXML
   void toMyCars() throws IOException {
-    SwitchScene switchScene = new SwitchScene();
-    switchScene.switchScene("main/my_cars.fxml", carsBtn, 1300, 750);
+    SwitchScene.switchScene("main/my_cars.fxml", carsBtn, 1300, 750);
   }
 
 
 
   private List<Car> getData() {
     List<Car> cars = new ArrayList<>();
-    DatabaseConnection databaseConnection = new DatabaseConnection("car_rental", "cars");
-    MongoCollection<Document> collection = databaseConnection.getCollection();
-    MongoCursor<Document> cursor = collection.find().iterator();
+    MongoCursor<Document> cursor = DatabaseConnection.carsCollection.find().iterator();
     Car car;
 
     while (cursor.hasNext()) {

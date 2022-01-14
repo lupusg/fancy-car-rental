@@ -35,10 +35,7 @@ public class ItemRemove {
 
   @FXML
   void onMouseClickRemove(MouseEvent event) {
-    DatabaseConnection databaseConnection = new DatabaseConnection("car_rental", "users");
-    MongoCollection<Document> collection = databaseConnection.getCollection();
-
-    Document query = collection.find(eq("_id", Login.username)).first();
+    Document query = DatabaseConnection.usersCollection.find(eq("_id", Login.username)).first();
 
     JSONObject userJson = new JSONObject(query);
     JSONArray carsArray = userJson.getJSONArray("cars");
@@ -47,8 +44,8 @@ public class ItemRemove {
       JSONObject carJson = carsArray.getJSONObject(i);
 
       if (carJson.get("name").equals(car.getName())) {
-        collection.updateOne(eq("_id", Login.username), Updates.set("cars." + i, "0"));
-        collection.updateOne(eq("_id", Login.username), Updates.pull("cars", "0"));
+        DatabaseConnection.usersCollection.updateOne(eq("_id", Login.username), Updates.set("cars." + i, "0"));
+        DatabaseConnection.usersCollection.updateOne(eq("_id", Login.username), Updates.pull("cars", "0"));
         break;
       }
     }

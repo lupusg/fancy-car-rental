@@ -61,15 +61,13 @@ public class MyCars implements Initializable {
 
   @FXML
   void toCars() throws IOException {
-    SwitchScene switchScene = new SwitchScene();
-    switchScene.switchScene("main/cars.fxml", myCarsBtn, 1300, 750);
+    SwitchScene.switchScene("main/cars.fxml", myCarsBtn, 1300, 750);
   }
 
   private List<Car> getData() {
     List<Car> cars = new ArrayList<>();
-    DatabaseConnection databaseConnection = new DatabaseConnection("car_rental", "users");
-    MongoCollection<Document> collection = databaseConnection.getCollection();
-    Document user = collection.find(eq("_id", Login.username)).first();
+
+    Document user = DatabaseConnection.usersCollection.find(eq("_id", Login.username)).first();
 
     JSONObject userJson = new JSONObject(user);
     JSONArray carsArray = userJson.getJSONArray("cars");

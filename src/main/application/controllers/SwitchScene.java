@@ -9,8 +9,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class SwitchScene {
-  public void switchScene(String fxmlFile, Button button, int width, int height) throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+  public static void switchScene(String fxmlFile, Button button, int width, int height) throws IOException {
+    Parent root = FXMLLoader.load(SwitchScene.class.getResource(fxmlFile));
 
     Stage window = (Stage) button.getScene().getWindow();
     window.setScene(new Scene(root, width, height));

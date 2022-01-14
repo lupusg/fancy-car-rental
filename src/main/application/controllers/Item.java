@@ -37,8 +37,6 @@ public class Item {
 
   @FXML
   void onMouseClick(MouseEvent event) {
-    DatabaseConnection databaseConnection = new DatabaseConnection("car_rental", "users");
-    MongoCollection<Document> collection = databaseConnection.getCollection();
     ArrayList<Document> cars = new ArrayList<Document>();
     Document car = new Document();
 
@@ -48,6 +46,6 @@ public class Item {
 
     cars.add(car);
 
-    collection.findOneAndUpdate(eq("_id", Login.username), Updates.pushEach("cars", cars));
+    DatabaseConnection.usersCollection.findOneAndUpdate(eq("_id", Login.username), Updates.pushEach("cars", cars));
   }
 }
