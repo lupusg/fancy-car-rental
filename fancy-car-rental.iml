@@ -23,5 +23,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.78" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.webjars:jquery:3.5.1" level="project" />
     <orderEntry type="library" name="mongodb.mongo.java.driver" level="project" />
+    <orderEntry type="library" name="json" level="project" />
   </component>
 </module>
