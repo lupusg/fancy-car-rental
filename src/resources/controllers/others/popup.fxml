@@ -4,47 +4,37 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Popup">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="290.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Popup">
    <children>
-      <AnchorPane prefHeight="46.0" prefWidth="290.0" />
-      <Label text="Suneti sigur ca doriti sa continuati?">
+      <AnchorPane prefHeight="33.0" prefWidth="290.0" style="-fx-background-color: #452b27;" styleClass="anchor-pane" />
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="textLabel" text="Inainte de apasarea butonului &quot;Semnez&quot; asigurati-va ca ati luat la cunostiinta termenii si conditiile enumerate in sectiunea &quot;Terms of service&quot;.&#10;" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
          <VBox.margin>
             <Insets top="15.0" />
          </VBox.margin>
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <FontAwesomeIconView fill="#a13600" glyphName="WARNING" />
-         </graphic>
-      </Label>
-      <ScrollPane>
-         <VBox.margin>
-            <Insets left="10.0" right="10.0" top="10.0" />
-         </VBox.margin>
-         <content>
-            <TextArea prefHeight="245.0" prefWidth="265.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextArea>
-         </content>
-      </ScrollPane>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="72.0" prefWidth="290.0" spacing="30.0">
          <children>
-            <Button fx:id="noBtn" mnemonicParsing="false" onAction="#onNo" prefHeight="40.0" prefWidth="78.0" text="Nu">
+            <Button fx:id="noBtn" mnemonicParsing="false" onAction="#onNo" text=" Renunta">
                <graphic>
                   <FontAwesomeIconView fill="#a10000" glyphName="CLOSE" size="15" />
                </graphic>
             </Button>
-            <Button fx:id="yesBtn" mnemonicParsing="false" onAction="#onYes" prefHeight="40.0" prefWidth="87.0" text="Da">
+            <Button fx:id="yesBtn" mnemonicParsing="false" onAction="#onYes" text="Semnez">
                <graphic>
                   <FontAwesomeIconView fill="#00ab36" glyphName="CHECK" size="15" />
                </graphic>

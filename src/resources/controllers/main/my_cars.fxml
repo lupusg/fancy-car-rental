@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MyCars">
    <children>
-      <VBox prefHeight="750.0" prefWidth="331.0" style="-fx-background-color: #6D4C41;" stylesheets="">
+      <VBox prefHeight="750.0" prefWidth="331.0" style="-fx-background-color: #452b27;" stylesheets="">
          <children>
             <Pane prefHeight="200.0" prefWidth="335.0">
                <children>
@@ -26,14 +26,14 @@
                   </ImageView>
                </children>
             </Pane>
-            <Button fx:id="carsBtn" graphicTextGap="5.0" mnemonicParsing="false" onAction="#toCars" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #6D4C41;" text="Cars" textFill="WHITE">
+            <Button fx:id="carsBtn" graphicTextGap="5.0" mnemonicParsing="false" onAction="#toCars" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #452b27;" text="Cars" textFill="WHITE">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="CAR" />
                </graphic>
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="myCarsBtn" graphicTextGap="5.0" layoutX="10.0" layoutY="158.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #6D4C41;" text="My cars" textFill="WHITE">
+            <Button fx:id="myCarsBtn" graphicTextGap="5.0" layoutX="10.0" layoutY="158.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #452b27;" text="My cars" textFill="WHITE">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="CAR" text="" />
                </graphic>
@@ -41,21 +41,21 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button graphicTextGap="5.0" mnemonicParsing="false" onAction="#toDailyDiscounts" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #6D4C41;" text="Daily discounts" textFill="WHITE">
+            <Button graphicTextGap="5.0" mnemonicParsing="false" onAction="#toDailyDiscounts" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #452b27;" text="Daily discounts" textFill="WHITE">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="TAGS" />
                </graphic>
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button graphicTextGap="5.0" mnemonicParsing="false" onAction="#toTermsOfService" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #6D4C41;" text="Terms of service" textFill="WHITE">
+            <Button graphicTextGap="5.0" mnemonicParsing="false" onAction="#toTermsOfService" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #452b27;" text="Terms of service" textFill="WHITE">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="EXCLAMATION_CIRCLE" />
                </graphic>
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button graphicTextGap="5.0" mnemonicParsing="false" onAction="#logOut" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #6D4C41;" text="Log out" textFill="WHITE">
+            <Button graphicTextGap="5.0" mnemonicParsing="false" onAction="#logOut" prefHeight="56.0" prefWidth="347.0" style="-fx-background-color: #452b27;" text="Log out" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -67,7 +67,7 @@
       </VBox>
       <VBox layoutX="331.0" prefHeight="750.0" prefWidth="969.0">
          <children>
-            <HBox prefHeight="33.0" prefWidth="969.0" style="-fx-background-color: #5D4037;">
+            <HBox prefHeight="34.0" prefWidth="969.0" style="-fx-background-color: #4d2e2a;">
                <children>
                   <VBox prefHeight="200.0" prefWidth="161.0" />
                </children>

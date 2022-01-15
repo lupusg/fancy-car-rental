@@ -60,6 +60,7 @@
                         </VBox>
                      </children>
                   </VBox>
+                  <Label fx:id="wrongLabel" layoutX="116.0" layoutY="428.0" prefHeight="17.0" prefWidth="167.0" textFill="RED" />
                </children>
             </AnchorPane>
             <AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="61.0" prefWidth="798.0">

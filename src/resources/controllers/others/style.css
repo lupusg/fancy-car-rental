@@ -1,0 +1,12 @@
+.button{
+  -fx-background-radius: 50px;
+}
+
+.root{
+  -fx-background-radius: 30 19 19 30;
+  -fx-background-color: #e0e0e0;
+}
+
+.anchor-pane{
+  -fx-background-radius: 19 19 0 0;
+}
