@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -37,11 +38,12 @@ public class Popup {
     stage.close();
   }
 
-  public void showAndWait() throws IOException, InterruptedException {
+  public void showAndWait() throws IOException {
       Parent root = FXMLLoader.load(Popup.class.getResource("others/popup.fxml"));
-      Scene scene = new Scene(root, 290, 403);
+      Scene scene = new Scene(root, 290, 206);
       stage = new Stage();
 
+      scene.setFill(Color.TRANSPARENT);
       stage.initStyle(StageStyle.TRANSPARENT);
       stage.setResizable(false);
       stage.setScene(scene);
