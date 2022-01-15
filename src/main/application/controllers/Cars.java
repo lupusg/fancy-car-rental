@@ -67,7 +67,20 @@ public class Cars implements Initializable {
     SwitchScene.switchScene("main/my_cars.fxml", carsBtn, 1300, 750);
   }
 
+  @FXML
+  void toDailyDiscounts() throws IOException {
+    SwitchScene.switchScene("main/daily_discounts.fxml", carsBtn, 1300, 750);
+  }
 
+  @FXML
+  void toTermsOfService() throws IOException {
+    SwitchScene.switchScene("main/terms_of_service.fxml", carsBtn, 1300, 750);
+  }
+
+  @FXML
+  void logOut() throws IOException {
+    SwitchScene.switchToLogin("login/login.fxml", carsBtn);
+  }
 
   private List<Car> getData() {
     List<Car> cars = new ArrayList<>();
