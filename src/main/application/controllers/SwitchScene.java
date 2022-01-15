@@ -19,7 +19,7 @@ public class SwitchScene {
   public static void switchToLogin(String fxmlFile, Button button) throws IOException {
     Parent root = FXMLLoader.load(SwitchScene.class.getResource(fxmlFile));
     Stage window = (Stage) button.getScene().getWindow();
-    window.setScene(LoginScene.loginScene);
+    window.setScene(Main.loginScene);
   }
 
 
