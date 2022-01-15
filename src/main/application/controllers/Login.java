@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -23,6 +24,8 @@ public class Login {
 
   @FXML private Button loginButton;
 
+  @FXML private Label wrongLabel;
+
   @FXML
   protected void onLoginButtonClick() throws IOException {
     User user = new User(usernameInput.getText(), passwordInput.getText());
@@ -30,7 +33,9 @@ public class Login {
     if (DatabaseConnection.checkLogin(user)) {
       username = user.getUsername();
       SwitchScene.switchScene("main/cars.fxml", loginButton, 1300, 750);
-    } else System.out.println("invalid username/pass");
+    } else {
+      wrongLabel.setText("Wrong username or password");
+    }
   }
 
   @FXML
