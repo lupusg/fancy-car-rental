@@ -10,7 +10,8 @@ import java.io.IOException;
 import javafx.stage.StageStyle;
 import logic.DatabaseConnection;
 
-public class LoginScene extends Application {
+public class Main extends Application {
+  public static Scene loginScene;
 
   @Override
   public void start(Stage stage) throws IOException {
@@ -24,6 +25,7 @@ public class LoginScene extends Application {
     stage.setResizable(false);
     stage.setScene(scene);
     stage.show();
+    loginScene = scene;
 
   }
   public static void main(String[] args) {
