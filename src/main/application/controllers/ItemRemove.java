@@ -4,6 +4,7 @@ import static com.mongodb.client.model.Filters.eq;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Updates;
+import java.io.IOException;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -34,7 +35,7 @@ public class ItemRemove {
   }
 
   @FXML
-  void onMouseClickRemove(MouseEvent event) {
+  void onMouseClickRemove(MouseEvent event) throws IOException {
     Document query = DatabaseConnection.usersCollection.find(eq("_id", Login.username)).first();
 
     JSONObject userJson = new JSONObject(query);
@@ -46,6 +47,7 @@ public class ItemRemove {
       if (carJson.get("name").equals(car.getName())) {
         DatabaseConnection.usersCollection.updateOne(eq("_id", Login.username), Updates.set("cars." + i, "0"));
         DatabaseConnection.usersCollection.updateOne(eq("_id", Login.username), Updates.pull("cars", "0"));
+        SwitchScene.refreshScene("main/my_cars.fxml", img, 1300, 750);
         break;
       }
     }
