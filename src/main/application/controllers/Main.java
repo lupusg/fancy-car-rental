@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class Main extends Application {
     scene.setFill(Color.TRANSPARENT);
     stage.initStyle(StageStyle.TRANSPARENT);
     stage.setResizable(false);
+    stage.getIcons().add(new Image(Main.class.getResourceAsStream("login/icon.png")));
     stage.setScene(scene);
     stage.show();
     loginScene = scene;
