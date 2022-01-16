@@ -2,7 +2,6 @@ package controllers;
 
 import static com.mongodb.client.model.Filters.eq;
 
-import com.mongodb.client.MongoCollection;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;

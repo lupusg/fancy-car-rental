@@ -1,7 +1,5 @@
 package controllers;
 
-import com.mongodb.DocumentToDBRefTransformer;
-import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +16,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import logic.DatabaseConnection;
 import model.Car;
