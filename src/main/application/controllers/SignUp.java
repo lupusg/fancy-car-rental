@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 import logic.DatabaseConnection;
 import model.User;
 
+/**
+ * Controller-ul clasei de sign-up.
+ */
 public class SignUp {
   private double x, y;
   public static String username;

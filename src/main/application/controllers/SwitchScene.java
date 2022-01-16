@@ -9,6 +9,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * Clasa care se ocupa de schimbarea scenelor.
+ * Metodele au ca referinta un element fxml (buton, etc) de la care obtin Stage-ul pe care se afla
+ * stage folosit mai apoi pentru a-i seta o noua scena.
+ */
 public class SwitchScene {
   public static void switchScene(String fxmlFile, Button button, int width, int height) throws IOException {
     Parent root = FXMLLoader.load(SwitchScene.class.getResource(fxmlFile));

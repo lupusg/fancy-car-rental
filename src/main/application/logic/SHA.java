@@ -5,11 +5,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class SHA {
-  private static byte[] stringToBytes(String originalString) throws NoSuchAlgorithmException {
-    MessageDigest digest = MessageDigest.getInstance("SHA-256");
-    return digest.digest(originalString.getBytes(StandardCharsets.UTF_8));
-  }
-
   private static String bytesToHex(byte[] hash) {
     StringBuilder hexString = new StringBuilder(2 * hash.length);
     for (int i = 0; i < hash.length; i++) {

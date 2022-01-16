@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Modelul fiecarei masini folosite in program.
+ */
 public class Car {
   private String name;
   private String imgSrc;

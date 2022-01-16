@@ -17,6 +17,15 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Car;
 
+/**
+ * Controller-ul specific sectiunii "My cars".
+ *
+ * Implementeaza interfata Initializable pentru ca un simplu constructor nu are acces la variabilele
+ * cu tag-ul @FXML.
+ *
+ * Contine mai multe metode care ii permit ferestrei sa fie mutata, inchisa sau minimizata atunci *
+ * cand utilizatorul tine apasat sau apasa pe title bar-ul customizat.
+ */
 public class DailyDiscounts implements Initializable {
   private double x, y;
 
@@ -72,6 +81,11 @@ public class DailyDiscounts implements Initializable {
     SwitchScene.switchToLogin("login/login.fxml", myCarsBtn);
   }
 
+  /**
+   * Initializeaza lista cars cu ajutorul unei metode statice din clasa Static care alege la
+   * intamplare un numar de N masini care reprezeinta 35% din numarul total de masini si le reduce
+   * pretul la jumatate.
+   */
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
     cars.addAll(Static.discountedCars);

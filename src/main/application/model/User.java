@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * Modelul fiecarui utilizator folosit in program.
+ */
+
 public class User {
   private String username;
   private String password;

@@ -11,6 +11,10 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Car;
 
+/**
+ * Controller-ul sectiunii terms of service.
+ */
+
 public class TermsOfService {
   private double x, y;
 

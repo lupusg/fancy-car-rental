@@ -22,6 +22,16 @@ import model.Car;
 import org.bson.Document;
 import org.json.JSONObject;
 
+/**
+ * Este controller-ul principal pentru prima scena care este afisata atunci cand s-a realizat
+ * signin-ul.
+ *
+ * Implementeaza interfata Initializable pentru ca un simplu constructor nu are acces la variabilele
+ * cu tag-ul @FXML.
+ *
+ * Contine mai multe metode care ii permit ferestrei sa fie mutata, inchisa sau minimizata atunci
+ * cand utilizatorul tine apasat sau apasa pe title bar-ul customizat.
+ */
 public class Cars implements Initializable {
   private double x, y;
 
@@ -31,6 +41,7 @@ public class Cars implements Initializable {
 
   @FXML private Button carsBtn;
 
+  /* Lista in care se afla toate masinile extrase din database. */
   private List<Car> cars = new ArrayList<>();
 
   @FXML
@@ -79,6 +90,9 @@ public class Cars implements Initializable {
     SwitchScene.switchToLogin("login/login.fxml", carsBtn);
   }
 
+  /**
+   * @return lista cu masinile extrase din baza de date.
+   */
   private List<Car> getData() {
     List<Car> cars = new ArrayList<>();
     MongoCursor<Document> cursor = DatabaseConnection.carsCollection.find().iterator();
@@ -96,6 +110,10 @@ public class Cars implements Initializable {
     return cars;
   }
 
+  /**
+   * Metoda principala a clasei care extrage din database toate masinile si le initializeaza cate un
+   * acelasi fisier fxml, stetandu-i doar datele specifice masinii.
+   */
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
     cars.addAll(getData());

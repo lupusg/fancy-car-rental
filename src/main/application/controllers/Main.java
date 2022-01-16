@@ -11,6 +11,10 @@ import java.io.IOException;
 import javafx.stage.StageStyle;
 import logic.DatabaseConnection;
 
+/**
+ * Clasa principala a proiectului.
+ */
+
 public class Main extends Application {
   @Override
   public void start(Stage stage) throws IOException {

@@ -32,6 +32,12 @@ public class Popup {
     stage.close();
   }
 
+  /**
+   * Afiseaza fereastra de confirmare si pana nu este inchisa programul principal nu isi continua
+   * rularea.
+   * @throws IOException
+   */
+
   public void showAndWait() throws IOException {
       Parent root = FXMLLoader.load(Popup.class.getResource("others/popup.fxml"));
       Scene scene = new Scene(root, 290, 206);

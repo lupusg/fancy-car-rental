@@ -13,6 +13,11 @@ public class Static {
   public static boolean answer = false;
   public static List<Car> discountedCars = getRandomCars();
 
+  /**
+   * Itereaza fiecare obiect din array-ul de masini din database si alege la intamplare un numar N
+   * de masini care reprezinta 35% din numarul total de masini, al caror pret este redus la
+   * jumatate.
+   */
   public static List<Car> getRandomCars() {
     int index, initialPrice, discountedPrice;
     ArrayList<Car> cars = new ArrayList<>();
@@ -23,7 +28,6 @@ public class Static {
     Car car;
 
     index = 0;
-
     while (cursor.hasNext()) {
       JSONObject carJson = new JSONObject(cursor.next().toJson());
 

@@ -14,6 +14,12 @@ import logic.DatabaseConnection;
 import model.Car;
 import org.bson.Document;
 
+
+/**
+ * Este controller-ul specific fiecarei masini afisate pe ecran, folosind acelasi fisier FXML
+ * care este initializat de mai multe ori si ii sunt schimbate doar informatiile despre fiecare
+ * masina. (poza, pret, nume).
+ */
 public class Item {
   @FXML private ImageView img;
 
@@ -31,8 +37,13 @@ public class Item {
     img.setImage(image);
   }
 
+  /**
+   * Metoda care adauga in baza de date o masina, dar nu inainte de a informa utilizatorul printr-un
+   * pop in care ii este spus ca trebuie sa ia la cunostinta termenii si conditiile inainte de a
+   * semna electronic. (platonic vorbind, doar apasa butonul "semneaza").
+   */
   @FXML
-  public void onMouseClick(MouseEvent event) throws IOException, InterruptedException {
+  public void onMouseClick() throws IOException {
 
     Popup popup = new Popup();
     popup.showAndWait();

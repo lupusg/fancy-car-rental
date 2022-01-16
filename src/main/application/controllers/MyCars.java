@@ -23,6 +23,11 @@ import org.bson.Document;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * Controller-ul sectiunii "My cars". Masinile sunt selectate din database din array-ul "cars"
+ * pentru utilizatorul curent si sunt afisate intr-un gridpane.
+ */
+
 public class MyCars implements Initializable {
   private double x, y;
 

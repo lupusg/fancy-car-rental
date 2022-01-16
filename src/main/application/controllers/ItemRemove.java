@@ -15,6 +15,12 @@ import org.bson.Document;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * Este controller-ul specific fiecarei masini afisate pe ecran in sectiunea my cars, folosind
+ * acelasi fisier FXML care este initializat de mai multe ori si ii sunt schimbate doar informatiile
+ * despre fiecare masina. (poza, pret, nume). Are in plus fara de "Item" X-ul prin care utilizatorul
+ * poate sa renunte la masina inchiriata.
+ */
 public class ItemRemove {
   @FXML private ImageView img;
 
@@ -32,6 +38,14 @@ public class ItemRemove {
     img.setImage(image);
   }
 
+  /**
+   * Cauta masina cu numele respectiv in array-ul masinilor utilizatorului, ii seteaza valoarea cu 0
+   * si apoi se sterge din array cu metoda celor de la mongo pull toate valorile de 0.
+   *
+   * Intrucat metoda pull sterge toate valorile care au numele respectiv, in cazul in care
+   * utilizatorul are mai multe masini din acelasi model inchiriate le va sterge pe toate.
+   * ^^ Problema a fost rezolvata utilizand metoda de mai sus.
+   */
   @FXML
   void onMouseClickRemove(MouseEvent event) throws IOException {
     Document query = DatabaseConnection.usersCollection.find(eq("_id", Login.username)).first();

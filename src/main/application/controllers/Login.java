@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 import logic.DatabaseConnection;
 import model.User;
 
+/**
+ * Controller-ul intrfetei grafice de login.
+ */
 public class Login {
   private double x, y;
   public static String username;
@@ -27,6 +30,9 @@ public class Login {
 
   @FXML private Label errorLabel;
 
+  /**
+   * Verifica daca utilizatorul se afla in baza de date cu username-ul si parola introduse.
+   */
   @FXML
   protected void onLoginButtonClick() throws IOException, NoSuchAlgorithmException {
     User user = new User(usernameInput.getText(), passwordInput.getText());
