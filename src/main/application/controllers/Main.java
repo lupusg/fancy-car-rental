@@ -12,8 +12,6 @@ import javafx.stage.StageStyle;
 import logic.DatabaseConnection;
 
 public class Main extends Application {
-  public static Scene loginScene;
-
   @Override
   public void start(Stage stage) throws IOException {
 
@@ -27,8 +25,6 @@ public class Main extends Application {
     stage.getIcons().add(new Image(Main.class.getResourceAsStream("login/icon.png")));
     stage.setScene(scene);
     stage.show();
-    loginScene = scene;
-
   }
   public static void main(String[] args) {
     launch();
