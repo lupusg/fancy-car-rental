@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class SwitchScene {
   public static void switchScene(String fxmlFile, Button button, int width, int height) throws IOException {

@@ -8,7 +8,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import javafx.scene.chart.PieChart.Data;
 import model.User;
 import org.bson.Document;
 

@@ -2,10 +2,8 @@ package controllers;
 
 import static com.mongodb.client.model.Filters.eq;
 
-import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Updates;
 import java.io.IOException;
-import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;

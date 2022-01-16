@@ -1,7 +1,5 @@
 package controllers;
 
-import static com.mongodb.client.model.Filters.eq;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
