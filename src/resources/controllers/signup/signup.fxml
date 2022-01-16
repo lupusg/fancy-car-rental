@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="500.0" prefWidth="800.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Login">
+<HBox prefHeight="500.0" prefWidth="800.0" stylesheets="@../login/login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignUp">
    <children>
       <AnchorPane>
          <children>
@@ -32,25 +32,21 @@
                      <children>
                         <VBox>
                            <children>
-                              <Label text="Sign In">
+                              <Label text="Sign Up">
                                  <font>
                                     <Font name="Arial Bold" size="24.0" />
                                  </font>
                               </Label>
                            </children>
                         </VBox>
+                        <TextField id="email-input" fx:id="emailInput" layoutX="10.0" layoutY="137.0" onKeyPressed="#onEnter" prefHeight="37.0" prefWidth="236.0" promptText="Email" />
                         <TextField id="email-input" fx:id="usernameInput" onKeyPressed="#onEnter" prefHeight="37.0" prefWidth="236.0" promptText=" Username" />
                         <PasswordField id="pass-input" fx:id="passwordInput" onKeyPressed="#onEnter" prefHeight="37.0" promptText=" Password" />
                         <VBox alignment="CENTER_RIGHT">
                            <children>
-                              <HBox alignment="CENTER">
+                              <HBox alignment="CENTER" prefHeight="30.0" prefWidth="236.0">
                                  <children>
-                                    <Label onMouseClicked="#toSignUp" prefHeight="17.0" prefWidth="129.0" text="Don't have an account?" />
-                                    <Button id="submit-button" fx:id="loginButton" alignment="CENTER" mnemonicParsing="false" onAction="#onLoginButtonClick" onKeyPressed="#onEnter" prefHeight="31.0" prefWidth="97.0" text="Sign In" textFill="WHITE">
-                                       <HBox.margin>
-                                          <Insets left="18.0" />
-                                       </HBox.margin>
-                                    </Button>
+                                    <Button id="submit-button" fx:id="signUpButton" alignment="CENTER" mnemonicParsing="false" onAction="#onSignUpButtonClick" onKeyPressed="#onEnter" prefHeight="31.0" prefWidth="97.0" text="Sign Up" textFill="WHITE" />
                                  </children>
                               </HBox>
                            </children>
@@ -60,7 +56,7 @@
                         </VBox>
                      </children>
                   </VBox>
-                  <Label fx:id="errorLabel" layoutX="116.0" layoutY="428.0" prefHeight="17.0" prefWidth="167.0" textFill="RED" />
+                  <Label fx:id="errorLabel" layoutX="151.0" layoutY="428.0" prefHeight="17.0" prefWidth="130.0" textFill="RED" />
                </children>
             </AnchorPane>
             <AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="61.0" prefWidth="798.0">

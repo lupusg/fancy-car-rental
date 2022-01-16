@@ -3,6 +3,7 @@ package controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.chart.PieChart.Data;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -14,34 +15,32 @@ import javafx.stage.Stage;
 import logic.DatabaseConnection;
 import model.User;
 
-public class Login {
+public class SignUp {
   private double x, y;
   public static String username;
 
-  @FXML private TextField usernameInput;
+  @FXML private TextField usernameInput, emailInput;
 
   @FXML private PasswordField passwordInput;
 
-  @FXML private Button loginButton;
+  @FXML private Button signUpButton;
 
   @FXML private Label errorLabel;
 
   @FXML
-  protected void onLoginButtonClick() throws IOException {
-    User user = new User(usernameInput.getText(), passwordInput.getText());
+  protected void onSignUpButtonClick() throws IOException {
+    User user = new User(usernameInput.getText(), passwordInput.getText(), emailInput.getText());
 
-    if (DatabaseConnection.checkLogin(user)) {
-      username = user.getUsername();
-      SwitchScene.switchScene("main/cars.fxml", loginButton, 1300, 750);
+    if(DatabaseConnection.signUp(user)){
+      SwitchScene.switchToLogin("login/login.fxml", signUpButton);
     } else {
-      errorLabel.setText("Wrong username or password");
+      errorLabel.setText("Username already exists.");
     }
   }
 
   @FXML
-  void toSignUp(MouseEvent event) throws IOException {
-    SwitchScene.switchToSignUp("signup/signup.fxml", loginButton);
-    System.out.println("done");
+  void toLogIn(MouseEvent event) throws IOException {
+    SwitchScene.switchToLogin("login/login.fxml", signUpButton);
   }
 
   @FXML
@@ -73,7 +72,8 @@ public class Login {
   @FXML
   void onEnter(KeyEvent event) throws IOException {
     if(event.getCode() == KeyCode.ENTER){
-      onLoginButtonClick();
+      onSignUpButtonClick();
     }
   }
+
 }
