@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -27,7 +28,7 @@ public class Login {
   @FXML private Label errorLabel;
 
   @FXML
-  protected void onLoginButtonClick() throws IOException {
+  protected void onLoginButtonClick() throws IOException, NoSuchAlgorithmException {
     User user = new User(usernameInput.getText(), passwordInput.getText());
 
     if (DatabaseConnection.checkLogin(user)) {
@@ -71,7 +72,7 @@ public class Login {
   }
 
   @FXML
-  void onEnter(KeyEvent event) throws IOException {
+  void onEnter(KeyEvent event) throws IOException, NoSuchAlgorithmException {
     if(event.getCode() == KeyCode.ENTER){
       onLoginButtonClick();
     }

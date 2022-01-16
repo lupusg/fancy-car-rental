@@ -6,6 +6,7 @@ import static com.mongodb.client.model.Filters.and;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import javafx.scene.chart.PieChart.Data;
 import model.User;
@@ -26,21 +27,21 @@ public class DatabaseConnection {
     carsCollection = mongoDatabase.getCollection("cars");
   }
 
-  public static boolean checkLogin(User user) {
+  public static boolean checkLogin(User user) throws NoSuchAlgorithmException {
     Document document =
         usersCollection
-            .find(and(eq("_id", user.getUsername()), eq("password", user.getPassword())))
+            .find(and(eq("_id", user.getUsername()), eq("password", SHA.stringToSHA(user.getPassword()))))
             .first();
 
     return document != null;
   }
 
-  public static boolean signUp(User user) {
+  public static boolean signUp(User user) throws NoSuchAlgorithmException {
     if (usersCollection.find(eq("_id", user.getUsername())).first() == null) {
       Document dbUser = new Document();
 
       dbUser.put("_id", user.getUsername());
-      dbUser.put("password", user.getPassword());
+      dbUser.put("password", SHA.stringToSHA(user.getPassword()));
       dbUser.put("email", user.getEmail());
       dbUser.put("cars", new ArrayList<Document>());
 

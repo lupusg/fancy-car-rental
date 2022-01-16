@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.chart.PieChart.Data;
@@ -28,7 +29,7 @@ public class SignUp {
   @FXML private Label errorLabel;
 
   @FXML
-  protected void onSignUpButtonClick() throws IOException {
+  protected void onSignUpButtonClick() throws IOException, NoSuchAlgorithmException {
     User user = new User(usernameInput.getText(), passwordInput.getText(), emailInput.getText());
 
     if(DatabaseConnection.signUp(user)){
@@ -70,7 +71,7 @@ public class SignUp {
   }
 
   @FXML
-  void onEnter(KeyEvent event) throws IOException {
+  void onEnter(KeyEvent event) throws IOException, NoSuchAlgorithmException {
     if(event.getCode() == KeyCode.ENTER){
       onSignUpButtonClick();
     }
