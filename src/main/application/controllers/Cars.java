@@ -111,7 +111,7 @@ public class Cars implements Initializable {
   }
 
   /**
-   * Metoda principala a clasei care extrage din database toate masinile si le initializeaza cate un
+   * Metoda principala a clasei care extrage din database toate masinile si le initializeaza
    * acelasi fisier fxml, stetandu-i doar datele specifice masinii.
    */
   @Override
