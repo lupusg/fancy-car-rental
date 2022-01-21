@@ -1,0 +1,113 @@
+[{
+  "_id": {
+    "$oid": "61df21bcda0c0ab42b2a4d40"
+  },
+  "name": "Mercedes-Benz G",
+  "price": "de la 999 RON/zi",
+  "imgSrc": "/images/mercedes_g.png"
+},{
+  "_id": {
+    "$oid": "61df2221da0c0ab42b2a4d41"
+  },
+  "name": "Nissan Qashqai",
+  "price": "de la 249 RON/zi",
+  "imgSrc": "/images/nissan_qashqai.png"
+},{
+  "_id": {
+    "$oid": "61df2237da0c0ab42b2a4d42"
+  },
+  "name": "Audi A4",
+  "price": "de la 499 RON/zi",
+  "imgSrc": "/images/audi_a4.png"
+},{
+  "_id": {
+    "$oid": "61df2257da0c0ab42b2a4d43"
+  },
+  "name": "Renault Talisman",
+  "price": "de la 399 RON/zi",
+  "imgSrc": "/images/renault_talisman.png"
+},{
+  "_id": {
+    "$oid": "61e0bdae26c9d78ecdecafe3"
+  },
+  "name": "Lamborghini Urus",
+  "price": "de la 7499 RON/zi",
+  "imgSrc": "/images/lamborghini_urus.png"
+},{
+  "_id": {
+    "$oid": "61e0bdcb26c9d78ecdecafe4"
+  },
+  "name": "Audi R8",
+  "price": "de la 4499 RON/zi",
+  "imgSrc": "/images/audi_r8.png"
+},{
+  "_id": {
+    "$oid": "61e0bdea26c9d78ecdecafe5"
+  },
+  "name": "Dacia Logan",
+  "price": "de la 149 RON/zi",
+  "imgSrc": "/images/dacia_logan.png"
+},{
+  "_id": {
+    "$oid": "61e0be0626c9d78ecdecafe6"
+  },
+  "name": "Volkswagen Jetta",
+  "price": "de la 249 RON/zi",
+  "imgSrc": "/images/volkswagen_jetta.png"
+},{
+  "_id": {
+    "$oid": "61e0cba026c9d78ecdecafe7"
+  },
+  "name": "BMW 850i",
+  "price": "de la 3499 RON/zi",
+  "imgSrc": "/images/BMW_850i.png"
+},{
+  "_id": {
+    "$oid": "61e0cbd126c9d78ecdecafec"
+  },
+  "name": "Ferrari 488GTB",
+  "price": "de la 7499 RON/zi",
+  "imgSrc": "/images/ferrari_488.png"
+},{
+  "_id": {
+    "$oid": "61e0cbe526c9d78ecdecafed"
+  },
+  "name": "Ford Fiesta",
+  "price": "de la 249 RON/zi",
+  "imgSrc": "/images/ford_fiesta.png"
+},{
+  "_id": {
+    "$oid": "61e137f32bff433adcef6cb3"
+  },
+  "name": "Opel Astra",
+  "price": "de la 149 RON/zi",
+  "imgSrc": "/images/opel_astra.png"
+},{
+  "_id": {
+    "$oid": "61e1387a2bff433adcef6cb8"
+  },
+  "name": "Ford Focus",
+  "price": "de la 249 RON/zi",
+  "imgSrc": "/images/ford_focus.png"
+},{
+  "_id": {
+    "$oid": "61e309da20b4fe972f73ecb8"
+  },
+  "name": "Ford Raptor",
+  "price": "de la 2499 RON/zi",
+  "imgSrc": "/images/ford_raptor.png"
+},{
+  "_id": {
+    "$oid": "61e309ea20b4fe972f73ecb9"
+  },
+  "name": "Skoda Octavia",
+  "price": "de la 349 RON/zi",
+  "imgSrc": "/images/skoda_octavia.png"
+},{
+  "_id": {
+    "$oid": "61e30a0120b4fe972f73ecba"
+  },
+  "name": "Volvo XC90",
+  "price": "de la 999 RON/zi",
+  "imgSrc": "/images/volvo_xc90.png"
+}]
