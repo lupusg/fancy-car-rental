@@ -1,4 +1,3 @@
-# fancy-car-rental
 ## Screenshots
 ![alt text](https://i.imgur.com/xD7EB2C.png)
 ![alt text](https://i.imgur.com/uUeqeZp.png)
